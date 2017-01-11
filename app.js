@@ -30,5 +30,5 @@ app.use(function *(next) {
     
 })
 
-app.listen(8080);
-console.log("listen 8080")
+app.listen(1234);
+console.log("listen 1234")
