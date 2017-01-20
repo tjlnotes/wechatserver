@@ -1,34 +1,29 @@
-var Koa = require("koa");
-var sha1 = require("sha1");
+"use strict"
+
+var Koa = require('koa');
+var path = require('path');
+var wechat = require('./wechat/g');
+var util = require('./libs/util');
+var wechat_file = path.join(__dirname, './config/wechat.txt');
+
 var config = {
     wechat: {
-        appid: "wx9ae0bdfd2f1e5816",
-        appsecret: "wx9ae0bdfd2f1e5816",
-        token: "iloveyangmi"
+        appID: "wx9ae0bdfd2f1e5816",
+        appSecret: "0623f7ed6f3082060a69f5e4a77c2652",
+        token: "iloveyangmi",
+        getAccessToken: function() {
+            return util.readFileAsync(wechat_file);
+        },
+        saveAccessToken: function(data) {
+            data = JSON.stringify(data);
+            return util.writeFileAsync(wechat_file, data);
+        }
     }
 }
 
 var app = new Koa();
 
-app.use(function *(next) {
-    console.log(this.query);
-
-    var token = config.wechat.token;
-    var nonce = this.query.nonce;
-    var timestamp = this.query.timestamp;
-    var echostr = this.query.echostr;
-    var signature = this.query.signature;
-
-    var str = [token,timestamp,nonce].sort().join("");
-
-    var sha = sha1(str);
-    console.log(sha);
-
-    if(sha === signature) {
-        this.body = echostr;
-    }
-    
-})
+app.use(wechat(config.wechat));
 
 app.listen(1234);
 console.log("listen 1234")
