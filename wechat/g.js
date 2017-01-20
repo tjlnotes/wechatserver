@@ -8,7 +8,7 @@ var util = require('./util');
 module.exports = function(opts) {
     var wechat = new Wechat(opts);
     return function *(next) {
-        console.log(this.query);
+        var that = this;
         var token = opts.token;
         var nonce = this.query.nonce;
         var timestamp = this.query.timestamp;
@@ -41,7 +41,14 @@ module.exports = function(opts) {
             })
 
             var content = yield util.parseXMLAsync(data);
-            console.log(content);
+
+            var message = util.formatMessage(content.xml);
+
+            this.weixin = message;
+
+            yield handler.call(this, next);
+
+            wechat.reply.call(this);
         }
     }
 }
