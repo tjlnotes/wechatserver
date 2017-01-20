@@ -39,7 +39,8 @@ module.exports = function(opts) {
                 encoding: this.charset
             })
 
-            console.log(data.toString());
+            var content = yield util.parseXMLAsync(data);
+            console.log(content);
         }
     }
 }
