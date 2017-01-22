@@ -47,7 +47,17 @@ exports.reply = function* (next) {
             reply = "you've send 3";
         }
         else if (content === '4') {
-            reply = "you've send 4";
+            reply = [{
+                title: '技术改变世界'，
+                description: '此处仅仅是个测试描述',
+                picUrl: 'http://pic.58pic.com/58pic/15/35/05/95258PICQnd_1024.jpg',
+                url: 'http://www.baidu.com'
+            },{
+                title: 'nodejs 微信开发'，
+                description: '此处仅仅是个测试描述',
+                picUrl: 'http://image.elegantliving.ceconline.com/320000/320100/20110815_03_52.jpg',
+                url: 'http://www.baidu.com'
+            }]];
         }
         else if (content === '5') {
             reply = "you've send 5";
