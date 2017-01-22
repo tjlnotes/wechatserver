@@ -34,7 +34,7 @@ module.exports = function(opts, handler) {
 
                 return false;
             }
-
+            console.log(this);
             var data = yield getRawBody(this.req, {
                 length: this.length,
                 limit: '1mb',
@@ -42,7 +42,7 @@ module.exports = function(opts, handler) {
             })
 
             var content = yield util.parseXMLAsync(data);
-
+            console.log('content:' + content);
             var message = util.formatMessage(content.xml);
 
             this.weixin = message;
