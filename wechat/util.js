@@ -54,7 +54,6 @@ function formatMessage(result) {
 exports.formatMessage = formatMessage;
 
 exports.tpl = function(content, message) {
-    console.log("content:" + JSON.stringify(content));
     var info = {};
     var type = 'text';
     var fromUsername = message.FromUserName;
@@ -64,7 +63,7 @@ exports.tpl = function(content, message) {
         type = 'news';
     }
 
-    type = content.type || type;
+    type = type || content.type;
     info.content = content;
     info.createTime = new Date().getTime();
     info.msgType = type;
