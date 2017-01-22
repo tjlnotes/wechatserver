@@ -12,6 +12,7 @@ exports.reply = function* (next) {
             }
 
             this.body = '你订阅了这个号\r\n' + '消息ID:' + message.MsgId;
+            console.log(this.body);
         }
         else if (message.Event === 'unsubscribe') {
             console.log('取消关注');
