@@ -64,6 +64,7 @@ exports.tpl = function(content, message) {
     }
 
     console.log('type:' + content.type);
+    console.log('content:'+ content);
     type = content.type || type;
     info.content = content;
     info.createTime = new Date().getTime();
