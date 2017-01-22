@@ -82,7 +82,8 @@ Wechat.prototype.reply = function() {
     var xml = util.tpl(content, message);
     this.status = 200;
     this.type = 'application/xml';
-    console.log("xml:" + xml);
+    console.log("xml:");
+    console.log(xml);
     this.body = xml;
 }
 
