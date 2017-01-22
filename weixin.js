@@ -2,7 +2,7 @@
 
 exports.reply = function* (next) {
     var message = this.weixin;
-
+    
     if (message.MsgType === 'event') {
         if (message.Event === 'subscribe') {
             if (message.EventKey) {
