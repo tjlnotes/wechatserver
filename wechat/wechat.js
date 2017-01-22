@@ -21,7 +21,7 @@ function Wechat(opts) {
     this.fetchAccessToken();
 }
 
-Wechat.prototype.isValidAccessToken = function(data) {
+Wechat.prototype.fetchAccessToken = function(data) {
     var that = this;
 
     if (this.access_token && this.expires_in) {
