@@ -105,23 +105,23 @@ Wechat.prototype.uploadMaterial = function(type, filepath) {
             .fetchAccessToken()
             .then(function(data) {
                 var url = api.upload + 'access_token+' + data.access_token + '&type=' + data.type;
+
+                request({meghod: 'POST', url: url, json: true}).then(function(response) {
+                    console.log("response:");
+                    console.log(response);
+                    var _data = response.body;
+
+                    if (_data) {
+                        resolve(_data);
+                    }
+                    else {
+                        throw new Error('Upload material fails');
+                    }
+                })
             })
-
-        request({meghod: 'POST', url: url, json: true}).then(function(response) {
-            console.log("response:");
-            console.log(response);
-            var _data = response.body;
-
-            if (_data) {
-                resolve(_data);
-            }
-            else {
-                throw new Error('Upload material fails');
-            }
-        })
-        .catch(function(err) {
-            reject(err);
-        })
+            .catch(function(err) {
+                reject(err);
+            })
     })
 }
 
