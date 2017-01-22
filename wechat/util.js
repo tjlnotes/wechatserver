@@ -68,8 +68,9 @@ exports.tpl = function(content, message) {
 
     type = content.type ? content.type : type;
     info.content = content;
-    console.log("-------------------------");
+    console.log("-------------------------content:");
     console.log(content);
+    console.log("==================");
     info.createTime = new Date().getTime();
     info.msgType = type;
     info.toUserName = fromUsername;
