@@ -68,7 +68,7 @@ exports.reply = function* (next) {
 
             reply = {
                 type: 'image',
-                mediaId: data.media_id;
+                mediaId: data.media_id
             }
         }
         this.body = reply;
