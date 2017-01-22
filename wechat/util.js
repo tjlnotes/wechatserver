@@ -63,7 +63,11 @@ exports.tpl = function(content, message) {
         type = 'news';
     }
 
-    type = type || content.type;
+    if (!content) {
+      content = 'Empty news'
+    }
+
+    type = content.type || type;
     info.content = content;
     info.createTime = new Date().getTime();
     info.msgType = type;

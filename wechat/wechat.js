@@ -79,6 +79,8 @@ Wechat.prototype.reply = function() {
     var content = this.request;
     var message = this.weixin;
 
+
+    console.log("content:" + content);
     var xml = util.tpl(content, message);
 
     this.status = 200;
