@@ -77,7 +77,7 @@ Wechat.prototype.updateAccessToken = function(data) {
 
 Wechat.prototype.reply = function() {
     console.log("this:" + JSON.stringify(this.request));
-    console.log("this:" + JSON.stringify(this.request.content-type));
+    console.log("this:" + JSON.stringify(this.request.['content-type']));
     var content = this.request;
     var message = this.weixin;
 
