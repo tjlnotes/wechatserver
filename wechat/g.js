@@ -40,6 +40,7 @@ module.exports = function(opts, handler) {
                 encoding: this.charset
             })
 
+            console.log(data);
             var content = yield util.parseXMLAsync(data);
 
             console.log('content:' + JSON.stringify(content));
