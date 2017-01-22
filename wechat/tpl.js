@@ -49,8 +49,17 @@ var tpl = heredoc(function() {/*
   </xml>
 */})
 
-var compiled = ejs.compile(tpl);
-
+// var compiled = ejs.compile(tpl);
+var compiled = function (info) {
+    var xml =       '<xml>' +
+        '<ToUserName><![CDATA[' + info.toUserName + ']]></ToUserName>' +
+        '<FromUserName><![CDATA[' + info.fromUserName + ']]></FromUserName>' +
+        '<CreateTime>' + info.createTime + '</CreateTime>' +
+        '<MsgType><![CDATA[text]]></MsgType>' +
+        '<Content><![CDATA[你好]]></Content>' +
+        '</xml>';
+    return xml;
+}
 exports = module.exports = {
   compiled: compiled
 };
