@@ -94,7 +94,7 @@ Wechat.prototype.uploadMaterial = function(type, filepath) {
 
     var that = this;
     var form = {
-        media: fs.createReadStream(filepath);
+        media: fs.createReadStream(filepath)
     }
 
     var appID = this.appID;
