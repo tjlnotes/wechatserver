@@ -66,7 +66,7 @@ exports.tpl = function(content, message) {
       content = 'Empty news';
     }
 
-    type = content.type ? content.type : type;
+    type = content.type || type;
     info.content = content;
     console.log("-------------------------content:");
     console.log(content);
