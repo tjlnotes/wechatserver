@@ -64,7 +64,7 @@ exports.tpl = function(content, message) {
     }
 
     if (!content) {
-      content = 'Empty news'
+      content = 'Empty news';
     }
 
     type = content.type || type;
