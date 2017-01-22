@@ -1,5 +1,9 @@
 'use strict'
 
+var config = require('./config');
+var Wechat = require('./wechat/wechat');
+var wechatApi = new Wechat(config.wechat);
+
 exports.reply = function* (next) {
     var message = this.weixin;
     if (message.MsgType === 'event') {
@@ -60,7 +64,12 @@ exports.reply = function* (next) {
             }];
         }
         else if (content === '5') {
-            reply = "you've send 5";
+            var data = yield wechatApi.uploadMaterial('image', __dirname + '/2.jpg')
+
+            reply = {
+                type: 'image',
+                mediaId: data.media_id;
+            }
         }
         this.body = reply;
     }
