@@ -8,6 +8,7 @@ var util = require('./util');
 module.exports = function(opts) {
     var wechat = new Wechat(opts);
     return function *(next) {
+        console.log(this.query);
         var that = this;
         var token = opts.token;
         var nonce = this.query.nonce;
