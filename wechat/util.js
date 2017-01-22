@@ -56,16 +56,14 @@ exports.formatMessage = formatMessage;
 exports.tpl = function(content, message) {
     var info = {};
     var type = 'text';
-    console.log('inital type:' + type);
     var fromUsername = message.FromUserName;
     var toUserName = message.ToUserName;
 
     if (Array.isArray(content)) {
         type = 'news';
-        console.log('type is news:' + type);
     }
 
-    console.log('type:' + type);
+    console.log('type:' + content.type);
     type = content.type || type;
     info.content = content;
     info.createTime = new Date().getTime();
