@@ -51,7 +51,7 @@ module.exports = function(opts, handler) {
 
             yield handler.call(this, next);
 
-            console.log("this:" + this);
+            console.log("this:" + JSON.stringify(this));
             wechat.reply.call(this);
         }
     }
