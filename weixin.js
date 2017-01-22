@@ -57,7 +57,7 @@ exports.reply = function* (next) {
                 description: '此处仅仅是个测试描述',
                 picUrl: 'http://image.elegantliving.ceconline.com/320000/320100/20110815_03_52.jpg',
                 url: 'http://www.baidu.com'
-            }]];
+            }];
         }
         else if (content === '5') {
             reply = "you've send 5";
