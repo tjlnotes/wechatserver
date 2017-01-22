@@ -66,10 +66,10 @@ exports.tpl = function(content, message) {
       content = 'Empty news';
     }
 
-    type = content.type || type;
+    type = content.type ? content.type : type;
     info.content = content;
     console.log("-------------------------");
-    console.log(JSON.stringify(content));
+    console.log(content);
     info.createTime = new Date().getTime();
     info.msgType = type;
     info.toUserName = fromUsername;
