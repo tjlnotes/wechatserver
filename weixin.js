@@ -85,7 +85,7 @@ exports.reply = function* (next) {
                 type: 'music',
                 title: 'music',
                 description: '这是个音乐测试 --我愿意　　王菲',
-                musicUrl: 'http://ar.h5.ra01.sycdn.kuwo.cn/resource/n1/192/12/64/3564192763.mp3',
+                musicUrl: 'http://yinyueshiting.baidu.com/data2/music/246755786/2467557501485147661128.mp3?xcode=32c67fcb4baa17ade61345ed80ef9cd2',
                 thumbMediaId: data.media_id
             }
         }
