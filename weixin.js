@@ -78,7 +78,7 @@ exports.reply = function* (next) {
                 mediaId: data.media_id
             }
         }
-        else if (content === '６') {
+        else if (content === '6') {
             var data = yield wechatApi.uploadMaterial('music', __dirname + '/2.jpg')
 
             reply = {
