@@ -84,8 +84,8 @@ exports.reply = function* (next) {
             reply = {
                 type: 'music',
                 title: 'music',
-                description: '这是个音乐测试',
-                musicUrl: 'http://sc1.111ttt.com/2016/1/12/10/205102156089.mp3',
+                description: '这是个音乐测试 --我愿意　　王菲',
+                musicUrl: 'http://ar.h5.ra01.sycdn.kuwo.cn/resource/n1/192/12/64/3564192763.mp3',
                 thumbMediaId: data.media_id
             }
         }
