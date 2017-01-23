@@ -79,7 +79,7 @@ exports.reply = function* (next) {
             }
         }
         else if (content === '6') {
-            var data = yield wechatApi.uploadMaterial('music', __dirname + '/2.jpg')
+            var data = yield wechatApi.uploadMaterial('music', 'http://sc1.111ttt.com/2016/1/12/10/205102156089.mp3')
 
             reply = {
                 type: 'music',
