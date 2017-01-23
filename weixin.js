@@ -48,7 +48,12 @@ exports.reply = function* (next) {
             reply = "you've send 2";
         }
         else if (content === '3') {
-            reply = "you've send 3";
+            var data = yield wechatApi.uploadMaterial('video', __dirname + '/6.mp4')
+
+            reply = {
+                type: 'video',
+                mediaId: data.media_id
+            }
         }
         else if (content === '4') {
             reply = [{
