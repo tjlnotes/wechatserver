@@ -52,6 +52,8 @@ exports.reply = function* (next) {
 
             reply = {
                 type: 'video',
+                title: '回复视频',
+                description: '打篮球',
                 mediaId: data.media_id
             }
         }
@@ -74,6 +76,17 @@ exports.reply = function* (next) {
             reply = {
                 type: 'image',
                 mediaId: data.media_id
+            }
+        }
+        else if (content === '６') {
+            var data = yield wechatApi.uploadMaterial('music', __dirname + '/2.jpg')
+
+            reply = {
+                type: 'music',
+                title: 'music',
+                description: '这是个音乐测试',
+                musicUrl: 'http://sc1.111ttt.com/2016/1/12/10/205102156089.mp3',
+                thumbMediaId: data.media_id
             }
         }
         this.body = reply;
